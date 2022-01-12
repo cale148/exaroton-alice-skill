@@ -1,0 +1,27 @@
+{
+  "name": "alice-exaroton",
+  "version": "1.0.0",
+  "description": "exaroton alice skill",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cale148/exaroton-alice-skill.git"
+  },
+  "keywords": [
+    "alice",
+    "skill",
+    "exaroton"
+  ],
+  "author": "Andrey Fuchs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cale148/exaroton-alice-skill/issues"
+  },
+  "homepage": "https://github.com/cale148/exaroton-alice-skill#readme",
+  "dependencies": {
+    "exaroton": "^1.7.0"
+  }
+}

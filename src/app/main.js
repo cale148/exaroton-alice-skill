@@ -1,5 +1,4 @@
 const { server } = require('./server.js')
-// const { run } = require('./run.js')
 
 
 const intents = {

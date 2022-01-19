@@ -1,20 +1,28 @@
-const { start } = require('./start.js')
-const { run } = require('./run.js')
+const { server } = require('./server.js')
+// const { run } = require('./run.js')
 
 
-const steps = {
-  start,
-  run,
+const intents = {
+  'server.action': server,
 }
 
 module.exports.handler = async (event) => {
   const {version, session, request, state} = event
-
-  const { response, session_state } = steps[state.session.step || 'start']?.({ request, state })
+  const [intent, payload] = Object.entries(request?.nlu?.intents || {})?.[0] || []
+  const response = {
+    text: 'Говори что желаешь?',
+    end_session: false,
+  }
+  if (intent) {
+    const { text } = await intents[intent]?.(payload)
+    response.text = text
+  }
   return {
     version,
     session,
     response,
-    session_state,
+    // session_state,
   }
 }
+
+

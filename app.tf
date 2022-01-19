@@ -32,8 +32,8 @@ resource "yandex_function" "app" {
 data "archive_file" "app-code" {
   output_path = "${path.module}/dist/app-code.zip"
   type        = "zip"
-  source_dir  = "src/${path.module}/app"
-  excludes    = [ "${path.module}/app/node_modules" ]
+  source_dir  = "${path.module}/src/app"
+  excludes    = [ "${path.module}/src/app/node_modules/**" ]
 }
 
 // При первом деплое будет создана новая функция - давайте попросим
